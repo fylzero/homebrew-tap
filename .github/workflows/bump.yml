@@ -1,0 +1,51 @@
+name: Bump casks
+
+# Checks every hour for new Lockshot, Recon and Shipyard releases and points the
+# casks at them. Run it by hand from the Actions tab to pick one up right away.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: bump
+
+jobs:
+  bump:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Point casks at the latest releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/bump-casks.sh
+
+      # Committed before the audit because tapping this checkout clones its commits,
+      # not the working tree. Nothing is pushed unless the audit passes.
+      - name: Commit
+        id: commit
+        run: |
+          changed=$(git diff --name-only -- Casks | xargs -n1 basename 2>/dev/null | sed 's/\.rb$//' | paste -sd ' ' -)
+          if [[ -z "$changed" ]]; then echo "Nothing to bump"; exit 0; fi
+          echo "casks=$changed" >> "$GITHUB_OUTPUT"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Bump ${changed// /, }"
+
+      - name: Audit the bumped casks
+        if: steps.commit.outputs.casks != ''
+        run: |
+          brew tap fylzero/tap "$GITHUB_WORKSPACE"
+          brew trust --tap fylzero/tap
+          for c in ${{ steps.commit.outputs.casks }}; do
+            brew style "Casks/$c.rb"
+            brew audit --cask --online "fylzero/tap/$c"
+          done
+
+      - name: Push
+        if: steps.commit.outputs.casks != ''
+        run: git push
