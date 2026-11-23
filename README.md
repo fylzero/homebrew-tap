@@ -3,12 +3,12 @@
 Homebrew casks for [Lockshot](https://github.com/fylzero/lockshot), [Recon](https://github.com/fylzero/recon) and [Shipyard](https://github.com/fylzero/shipyard). Apple Silicon Macs only.
 
 ```sh
-brew install --cask fylzero/tap/lockshot
-brew install --cask fylzero/tap/recon
-brew install --cask fylzero/tap/shipyard
+brew install fylzero/tap/lockshot
+brew install fylzero/tap/recon
+brew install fylzero/tap/shipyard
 ```
 
-Each app updates itself, so `brew upgrade` leaves them alone unless you pass `--greedy`. `brew uninstall --zap --cask fylzero/tap/<app>` also removes its settings and caches.
+Each app updates itself, so `brew upgrade` leaves them alone unless you pass `--greedy`. `brew uninstall --zap fylzero/tap/<app>` also removes its settings and caches.
 
 ## How the casks stay current
 
