@@ -11,6 +11,7 @@ cd "$(dirname "$0")/.."
 # Written for the bash 3.2 macOS ships, so no associative arrays.
 app_name() {
   case $1 in
+    dispatch) echo Dispatch ;;
     lockshot) echo Lockshot ;;
     recon) echo Recon ;;
     shipyard) echo Shipyard ;;
@@ -18,7 +19,7 @@ app_name() {
   esac
 }
 
-[[ $# -gt 0 ]] || set -- lockshot recon shipyard
+[[ $# -gt 0 ]] || set -- dispatch lockshot recon shipyard
 
 for token in "$@"; do
   name=$(app_name "$token")

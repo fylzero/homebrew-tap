@@ -1,8 +1,9 @@
 # fylzero/tap
 
-Homebrew casks for [Lockshot](https://github.com/fylzero/lockshot), [Recon](https://github.com/fylzero/recon) and [Shipyard](https://github.com/fylzero/shipyard). Apple Silicon Macs only.
+Homebrew casks for [Dispatch](https://github.com/fylzero/dispatch), [Lockshot](https://github.com/fylzero/lockshot), [Recon](https://github.com/fylzero/recon) and [Shipyard](https://github.com/fylzero/shipyard). Apple Silicon Macs only.
 
 ```sh
+brew install fylzero/tap/dispatch
 brew install fylzero/tap/lockshot
 brew install fylzero/tap/recon
 brew install fylzero/tap/shipyard

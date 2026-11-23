@@ -1,7 +1,7 @@
 name: Bump casks
 
-# Checks every hour for new Lockshot, Recon and Shipyard releases and points the
-# casks at them. Run it by hand from the Actions tab to pick one up right away.
+# Checks every hour for new Dispatch, Lockshot, Recon and Shipyard releases and
+# points the casks at them. Run it by hand from the Actions tab to pick one up right away.
 
 on:
   schedule:
