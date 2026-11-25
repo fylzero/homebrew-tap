@@ -38,6 +38,9 @@ jobs:
 
       - name: Audit the bumped casks
         if: steps.commit.outputs.casks != ''
+        # Without a token, --online audits share the runner IP's 60-an-hour API limit.
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
           brew tap fylzero/tap "$GITHUB_WORKSPACE"
           brew trust --tap fylzero/tap
