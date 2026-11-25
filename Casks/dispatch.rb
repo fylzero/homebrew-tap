@@ -1,6 +1,6 @@
 cask "dispatch" do
-  version "0.2.4"
-  sha256 "761caa6c079cbf13c17534e5aaaf955012dd106d3d5ad0026c160824012e5a88"
+  version "1.0.0"
+  sha256 "35904b04d5de8bd35955cfeab8ebd99ff2fc0706a5b4d6a0f06887783c88b8bc"
 
   url "https://github.com/fylzero/dispatch/releases/download/v#{version}/Dispatch-macos-arm64.dmg"
   name "Dispatch"

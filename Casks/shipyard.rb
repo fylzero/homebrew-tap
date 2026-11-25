@@ -1,6 +1,6 @@
 cask "shipyard" do
-  version "1.21.12"
-  sha256 "d13082ff7fdb807cdf28d9951d00d59885bfc5e5a651ff401c5a492e9ff750ec"
+  version "1.21.13"
+  sha256 "b91a3433362fc2404804570d13300a6a5370a18aa2c1c9d19c8ee8a117b38a4e"
 
   url "https://github.com/fylzero/shipyard/releases/download/v#{version}/Shipyard-macos-arm64.dmg"
   name "Shipyard"
