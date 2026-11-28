@@ -1,6 +1,6 @@
 cask "lockshot" do
-  version "1.6.1"
-  sha256 "43ecd2e72d10ccd697f506bbebd1e72c55b7f397d9636a52f49c7ae0fa569154"
+  version "1.6.2"
+  sha256 "8a132efb4ed98f230a78756982b4f7d5d3161b30720ff910548a579d2c4d141b"
 
   url "https://github.com/fylzero/lockshot/releases/download/v#{version}/Lockshot-macos-arm64.dmg"
   name "Lockshot"

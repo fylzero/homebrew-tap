@@ -1,6 +1,6 @@
 cask "recon" do
-  version "1.20.1"
-  sha256 "445486420cf9a4abe1b526bbe4cf09154b93c6e00b12a035e53ce5e7146a6512"
+  version "1.20.2"
+  sha256 "b3aa083fd60f8913fc44feb465a1b1c49b1ac73ad64ab357f7c634ab8156f682"
 
   url "https://github.com/fylzero/recon/releases/download/v#{version}/Recon-macos-arm64.dmg"
   name "Recon"
